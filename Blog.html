@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+
+    <link rel="preload" href="MabryPro-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+
+    <style>
+        @font-face {
+            font-family: 'Mabry Pro';
+            src: url('MabryPro-Regular.eot');
+            src: local('Mabry Pro'), local('MabryPro-Regular'),
+                url('MabryPro-Regular.eot?#iefix') format('embedded-opentype'),
+                url('MabryPro-Regular.woff2') format('woff2'),
+                url('MabryPro-Regular.woff') format('woff'),
+                url('MabryPro-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        .bg-pink{
+            background-color: #ff90e8;
+        }
+
+        .bg-white{
+            background-color: white;
+        }
+
+        .text-black{
+            color: black;
+        }
+
+        .row{
+            margin-right: 0px !important;
+        }
+
+        .b-top{
+            border-top: 2px solid black;
+        }
+
+        .blog-head{
+            font-size: xx-large;
+            line-height: 1.25;
+        }
+
+        .blog-body{
+            font-size: 1rem;
+        }
+
+        .b-black{
+            border-top: 2px solid black;
+        }
+        
+        .b-bottom{
+            border-bottom: 2px solid black;
+        }
+
+        body{
+            font-family: 'Mabry pro' !important;
+            font-weight: normal !important;
+            font-style: normal !important;
+        }
+
+        img{
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        .bt{
+            position:relative;
+            height:max-content ;
+            color: white;
+            background-color: black;
+            border: 2px solid black;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .bt:hover {
+            box-shadow: 4px 4px black;
+            transform: translateX(-3px);
+        }
+
+        .mybtn{
+            color: white;
+            background-color: black;
+            border: 1px solid black;
+            border-radius: 4px;
+            padding: 0 15px;
+            cursor: pointer;
+            height: 50px;
+            width: 150px;
+            font-size: 14px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .mybtn:hover {
+            box-shadow: 4px 4px yellow, 8px 8px brown;
+            transform: translateX(-3px);
+        }
+
+        .hl{
+            font-size: 400%;
+        }
+
+        .hf{
+            font-size: 400%;
+        }
+        
+        .pf{
+            font-size: 175%;
+        }
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid black;
+        }
+
+        #nav-left{
+            padding: 2vw;
+            display: flex;
+            gap: 2vw;
+        }
+
+        #nav-left a{
+            color: black;
+            text-decoration: none;
+        }
+
+        #nav-left a:hover{
+            text-decoration: underline;
+        }
+
+        #nav-right{
+            display: flex;
+        }
+
+        #right1{
+            border-left: 2px solid black;
+            padding: 2vw;
+        }
+
+        #right1:hover{
+            background-color: #ff90e8;
+        }
+
+        #right1 a{
+            color: black;
+        }
+        
+        #right2{
+            border-left: 2px solid black;
+            padding: 2vw;
+            background-color: black;
+            color: white;
+        }
+
+        #right2 a{
+            color: white;
+        }
+
+        #right2:hover{
+            background-color: #ff90e8;
+        }
+
+        #right2:hover a{
+            color: black;
+        }
+
+        .act{
+            text-decoration: underline !important;
+        }
+
+        #footer-main{
+            background-color: black;
+            padding: 3vw 0;
+        }
+
+        #footer-main #left{
+            width: 60%;
+            height: 100%;
+            position: relative;
+            padding: 3vw 3vw;
+        }
+        
+        #left h3{
+            color: white;
+            font-size: 2.5vw;
+            margin-bottom: 2vw;
+        }
+
+        #left .container{
+            --bs-gutter-x: 0px;
+        }
+        
+        #left input{
+            background-color: white;
+            border: 2px solid black;
+            font-size: 2vw;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        
+        #left button{
+            background-color: #ff90e8;
+            border: 2px solid black;
+            font-size: 2vw;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        
+        #footer-main #right{
+            width: 40%;
+            height: 100%;
+            padding: 3vw 1vw;
+        }
+
+        #item-list{
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 3vw;
+        }
+        
+        #item-list ul{
+            list-style: none;
+            padding-inline-start: 0px;
+            margin-right: 1.5vw;
+        }
+        
+        #item-list a{
+            text-decoration: none;
+            color: white;
+            font-size: 1.2vw;
+        }
+
+        #item-list a:hover{
+            color: #ff90e8;
+        }
+
+        #icon-div{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1vw;
+            color: white;
+            padding-left: 3vw;
+        }
+
+        #icon-div i:hover{
+            color: #ff90e8;
+        }
+
+        @media screen and (max-width: 767px){
+            .hf{
+                font-size: 275%;
+            }
+            
+            .pf{
+                font-size: 125%;
+            }
+
+            .hl{
+                font-size: 250%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="b-black">
+        <div id="nav-left">
+            <a href="index.html">Home</a>
+            <a href="Features.html">Features</a>
+            <a href="Blog.html" class="act">Blog</a>
+            <a href="All.html">Discover</a>
+        </div>
+        <div id="nav-right">
+            <div id="right1"><a href="">Login</a></div>
+            <div id="right2"><a href="">Start Selling</a></div>
+        </div>
+    </nav>
+
+    <div class="container-fluid text-center b-black b-bottom bg-pink text-black py-5">
+        <h6 style="font-size: 125%;" class="mt-5">Fusion Market Blog</h6>
+        <h1 class="hf mt-4">The latest news and resources</h1>
+        <div class="container px-5">
+            <p class="pf mt-4 mx-5 mb-5">There’s no roadmap for making your own road. But here’s some how-tos, helpful tips, templates, and tools to help you.</p>
+            <p style="font-size: 120%; text-decoration: underline">Start reading below</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="container p-4">
+                <div class="bt bg-white text-black">
+                    <img src="Blog-Img/blog3.png" alt="blog01" class="d-block mx-auto">
+                    <div class="container b-top p-4">
+                        <h3 class="blog-head">39 Spark AR patches & templates to create Instagram filters</h3>
+                        <p class="blog-body">Create Instagram filters and augmented reality (AR) games with these Spark AR Studio patches and templates, available to download on Gumroad.</p>
+                        <a href="#">Read More<span style="font-size: larger;"> ⤍</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="container p-4">
+                <div class="bt bg-white text-black">
+                    <img src="Blog-Img/blog10.svg" alt="blog02" class="d-block mx-auto">
+                    <div class="container b-top p-4">
+                        <h3 class="blog-head">102 creators who’ve each earned over $100,000 share their single best tip for aspiring creators</h3>
+                        <p class="blog-body">We asked 102 creators who've earned over $100,000 each from selling digital products what their best tip was for aspiring creators. Read them all in this article.</p>
+                        <a href="#">Read More<span style="font-size: larger;"> ⤍</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="container p-4">
+                <div class="bt bg-white text-black">
+                    <img src="Blog-Img/blog4.png" alt="blog03" class="d-block mx-auto">
+                    <div class="container b-top p-4">
+                        <h3 class="blog-head">35 Lightroom presets to level up your photography</h3>
+                        <p class="blog-body">Get the shot you've always wanted: popular Lightroom presets from Gumroad to enhance your photos and streamline your editing process.</p>
+                        <a href="#">Read More<span style="font-size: larger;"> ⤍</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="container p-4">
+                <div class="bt bg-white text-black">
+                    <img src="Blog-Img/blog6.svg" alt="blog04" class="d-block mx-auto">
+                    <div class="container b-top p-4">
+                        <h3 class="blog-head">How to create and sell eBooks: all you need to know</h3>
+                        <p class="blog-body">Learn how to create an eBook and sell it online. In this article, we cover all you need to know, from the basics to getting paid, and more!</p>
+                        <a href="#">Read More<span style="font-size: larger;"> ⤍</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="container p-4">
+                <div class="bt bg-white text-black">
+                    <img src="Blog-Img/blog9.svg" alt="blog05" class="d-block mx-auto">
+                    <div class="container b-top p-4">
+                        <h3 class="blog-head">Top 38 UI kits for designing web & mobile apps</h3>
+                        <p class="blog-body">The best UI kits, designed for sketching, prototyping & sharing. Download the top web & mobile design resources for Figma, Photoshop, Sketch & more!</p>
+                        <a href="#">Read More<span style="font-size: larger;"> ⤍</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="container p-4">
+                <div class="bt bg-white text-black">
+                    <img src="Blog-Img/blog5.svg" alt="blog06" class="d-block mx-auto">
+                    <div class="container b-top p-4">
+                        <h3 class="blog-head">Top 36 Blender add-ons, tutorials & assets for 3D animators</h3>
+                        <p class="blog-body">A collection of top Blender tutorials, modeling, add-ons, textures and more assets from digital artists on Gumroad (free and premium downloads).</p>
+                        <a href="#">Read More<span style="font-size: larger;"> ⤍</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="container p-4">
+                <div class="bt bg-white text-black">
+                    <img src="Blog-Img/blog7.svg" alt="blog07" class="d-block mx-auto">
+                    <div class="container b-top p-4">
+                        <h3 class="blog-head">9 digital product ideas (with successful examples)</h3>
+                        <p class="blog-body">If you're not sure what digital products to sell, we cover all you need to know from digital product ideas to selling them.</p>
+                        <a href="#">Read More<span style="font-size: larger;"> ⤍</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="container p-4">
+                <div class="bt bg-white text-black">
+                    <img src="Blog-Img/blog8.svg" alt="blog08" class="d-block mx-auto">
+                    <div class="container b-top p-4">
+                        <h3 class="blog-head">38 notion templates to organize your life</h3>
+                        <p class="blog-body">A collection of top Notion Templates to boost your productivity so you can get more out of your workday.</p>
+                        <a href="#">Read More<span style="font-size: larger;"> ⤍</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="container p-4">
+                <div class="bt bg-white text-black">
+                    <img src="Blog-Img/blog11.svg" alt="blog09" class="d-block mx-auto">
+                    <div class="container b-top p-4">
+                        <h3 class="blog-head">Five ways digital artists make money online</h3>
+                        <p class="blog-body">Making money as a Digital Artist is a dream for many artists. Read this article to learn the 5 actionable ways digital artists can make money online.</p>
+                        <a href="#">Read More<span style="font-size: larger;"> ⤍</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="container p-4">
+                <div class="bt bg-white text-black">
+                    <img src="Blog-Img/blog12.svg" alt="blog10" class="d-block mx-auto">
+                    <div class="container b-top p-4">
+                        <h3 class="blog-head">How to earn a side income selling digital products</h3>
+                        <p class="blog-body">A whole new world of potential revenue streams await you and getting started is easier than you think. In fact, your greatest monetary gains may be the easiest you’ve ever made.</p>
+                        <a href="#">Read More<span style="font-size: larger;"> ⤍</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid text-center b-black bg-pink py-5">
+        <h1 class="mt-5 hl">Share your work.</h1>
+        <h1 class="mb-5 hl">Someone out there needs it.</h1>
+        <button class="mybtn mt-4 mb-5">Start Selling</button>
+    </div>
+
+    <div id="footer-main" class="d-flex flex-wrap flex-column flex-sm-row">
+        <div id="left">
+            <h3>Subscribe to get tips and tactics to grow the way you want.</h3>
+            <div class="container">
+                <form action="">
+                    <input type="email" placeholder="Your email address">
+                    <button>➜</button>
+                </form>
+            </div>
+        </div>
+        <div id="right">
+            <div id="item-list">
+                <ul>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+                <ul>
+                    <li><a href="Features.html">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="All.html">Discover</a></li>
+                    <li><a href="#">Jobs</a></li>
+                </ul>
+            </div>
+
+            <div id="icon-div">
+                <i class="ri-twitter-fill"></i>
+                <i class="ri-youtube-fill"></i>
+                <i class="ri-instagram-line"></i>
+                <i class="ri-facebook-fill"></i>
+                <i class="ri-pinterest-fill"></i>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

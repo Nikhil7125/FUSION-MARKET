@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lilita+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body{
+            height: 100%;
+            width: 100%;
+        }
+
+        .content{
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        #main{
+            height: 100%;
+            width: 100%;
+            display: flex;
+        }
+        
+        #left{
+            width: 100%;
+            background-color: #F4F4F0;
+        }
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5vw;
+        }
+
+        nav h1{
+            font-size: 3vw;
+            font-family: "Bebas Neue", sans-serif;
+        }
+        nav a{
+            color: black;
+            font-weight: 500;
+            font-size: 2vw;
+            text-decoration: underline;
+        }
+
+        #login{
+            font-size: 2.5vw;
+            margin: 0vw 5vw;
+        }
+
+        #buttons{
+            padding: 4vw 5vw;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #buttons button{
+            margin-bottom: 1vw;
+            border: 1px solid black;
+            border-radius: 3px;
+            padding: 1.5vw;
+            color: azure;
+            font-size: 1.5vw;
+            transition: all ease 0.1s;
+            cursor: pointer;
+        }
+
+        #buttons button:hover{
+            transform: translateX(-3px);
+            box-shadow: 3px 3px black;
+        }
+
+        form{
+            background-color: #F4F4F0;
+            padding: 0vw 5vw;
+            font-size: 1.5vw;
+        }
+        legend{
+            text-align: center;
+            margin-bottom: 3vw;
+        }
+        fieldset{
+            border-bottom: 0px;
+            border-left: 0px;
+            border-right: 0px;
+        }
+        input{
+            width: 100%;
+            height: 5vw;
+            margin-top: 1vw;
+            margin-bottom: 2vw;
+            color: white;
+            border: 1.25px solid black;
+            border-radius: 4px;
+        }
+        label{
+            font-weight: 400;
+        }
+        
+        #submit{
+            height: 4vw;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5vw;
+            border-radius: 3px;
+            border: 1px solid black;
+            margin-bottom: 10vw;
+            margin-top: 3vw;
+            transition: all ease 0.1s;
+        }
+
+        #submit:hover{
+            background-color: #FF90E8;
+            color: black;
+            transform: translateX(-3px);
+            box-shadow: 2px 2px black;
+        }
+    </style>
+</head>
+<body>
+    <div id="main" class="content">
+        <div id="left">
+            <nav>
+            <a href="index.html" style="text-decoration: none;">
+                <h1>
+                    FUSION MARKET
+                </h1>
+            </a>
+                <a href="">Sign up</a>
+            </nav>
+
+            <span id="login">Log in</span>
+
+            <br>
+            
+            <div id="buttons">
+                <button style="background-color: #4267B2;"><i class="ri-facebook-circle-fill"></i> &nbsp;Facebook</button>
+                <button style="background-color: #5383EC;"><i class="ri-google-fill"></i> &nbsp;Google</button>
+                <button style="background-color: black;"><i class="ri-twitter-x-fill"></i> &nbsp;X</button>
+            </div>
+
+            <form action="">
+                <fieldset>
+                    <legend>&nbsp;Or&nbsp;</legend>
+                    <label>Email</label> 
+                    <input type="email">
+
+                    <label>Password</label>
+                    <input type="password" style="margin-bottom: 0vw;">
+                    <span style="text-decoration: underline; cursor: pointer; font-size: 1vw;">Forgot password?</span>
+
+                    <input type="submit" value="Login" id="submit">
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        a = document.getElementById("login-img");
+        b = document.getElementById("left");
+        
+        a.style.height = b.style.height;
+    </script>
+</body>
+</html>
+<!-- 
+#right{
+    height: 100%;
+    width: 40%;
+    background-image: url("Login-Img.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+} -->

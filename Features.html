@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features</title>
+
+    <link rel="preload" href="MabryPro-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+
+    <style>
+        @font-face {
+            font-family: 'Mabry Pro';
+            src: url('MabryPro-Regular.eot');
+            src: local('Mabry Pro'), local('MabryPro-Regular'),
+                url('MabryPro-Regular.eot?#iefix') format('embedded-opentype'),
+                url('MabryPro-Regular.woff2') format('woff2'),
+                url('MabryPro-Regular.woff') format('woff'),
+                url('MabryPro-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        .row{
+            margin-right: 0px !important;
+        }
+
+        .bg-yellow{
+            background-color: #ffc900;
+        }
+
+        .bg-black{
+            background-color: black;
+        }
+
+        .bg-pink{
+            background-color: #ff90e8;
+        }
+
+        .bg-white{
+            background-color: white;
+        }
+
+        .bg-lightyellow{
+            background-color: #f1f333;
+        }
+
+        .bg-purple{
+            background-color: #90a8ed;
+        }
+
+        .text-yellow{
+            color: #ffc900 !important;
+        }
+
+        .text-white{
+            color: #f4f4f0 !important;
+        }
+
+        .text-black{
+            color: black !important;
+        }
+
+        .text-purple{
+            color: #90a8ed !important;
+        }
+
+        .b-black{
+            border-top: 2px solid black;
+        }
+        
+        .b-bottom{
+            border-bottom: 1px solid black;
+        }
+        
+        .b-top{
+            border-top: 1px solid black;
+        }
+
+        img{
+            position: relative;
+            width: auto;
+            max-width: 100%;
+        }
+
+        p{
+            font-size: large;
+        }
+
+        body{
+            font-family: Mabry pro, sans-serif;
+        }
+
+        .bt{
+            color: white;
+            background-color: black;
+            border: 1px solid black;
+            border-radius: 4px;
+            padding: 0 15px;
+            cursor: pointer;
+            height: 50px;
+            width: 150px;
+            font-size: 14px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .bt:hover {
+            box-shadow: 4px 4px yellow, 8px 8px brown;
+            transform: translateX(-3px);
+        }
+
+        #startSelling > h1{
+            font-size: 400%;
+        }
+
+        .hl{
+            margin-top: 3rem;
+        }
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid black;
+        }
+
+        #nav-left{
+            padding: 2vw;
+            display: flex;
+            gap: 2vw;
+        }
+
+        #nav-left a{
+            text-decoration: none;
+            color: black;
+        }
+
+        #nav-left a:hover{
+            text-decoration: underline;
+        }
+
+        #nav-right{
+            display: flex;
+        }
+
+        #right1{
+            border-left: 2px solid black;
+            padding: 2vw;
+        }
+
+        #right1:hover{
+            background-color: #ff90e8;
+        }
+
+        #right1 a{
+            color: black;
+        }
+        
+        #right2{
+            border-left: 2px solid black;
+            padding: 2vw;
+            background-color: black;
+            color: white;
+        }
+
+        #right2 a{
+            color: white;
+        }
+
+        #right2:hover{
+            background-color: #ff90e8;
+        }
+
+        #right2:hover a{
+            color: black;
+        }
+
+        .act{
+            text-decoration: underline !important;
+        }
+
+        #footer-main{
+            background-color: black;
+            padding: 3vw 0;
+        }
+
+        #footer-main #left{
+            width: 60%;
+            height: 100%;
+            position: relative;
+            padding: 3vw 3vw;
+        }
+        
+        #left h3{
+            color: white;
+            font-size: 2.5vw;
+            margin-bottom: 2vw;
+        }
+
+        #left .container{
+            --bs-gutter-x: 0px;
+        }
+        
+        #left input{
+            background-color: white;
+            border: 2px solid black;
+            font-size: 2vw;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        
+        #left button{
+            background-color: #ff90e8;
+            border: 2px solid black;
+            font-size: 2vw;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        
+        #footer-main #right{
+            width: 40%;
+            height: 100%;
+            padding: 3vw 1vw;
+        }
+
+        #item-list{
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 3vw;
+        }
+        
+        #item-list ul{
+            list-style: none;
+            padding-inline-start: 0px;
+            margin-right: 1.5vw;
+        }
+        
+        #item-list a{
+            text-decoration: none;
+            color: white;
+            font-size: 1.2vw;
+        }
+
+        #item-list a:hover{
+            color: #ff90e8;
+        }
+
+        #icon-div{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1vw;
+            color: white;
+            padding-left: 3vw;
+        }
+
+        #icon-div i:hover{
+            color: #ff90e8;
+        }
+
+        @media screen and (max-width: 767px){
+            #startSelling > h1{
+                font-size: 200%;
+            }
+
+            .hl{
+                margin-top: 1rem !important;
+            }
+
+            .bt{
+                margin-top: 0px !important;
+                margin-bottom: 20px !important;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="b-black">
+        <div id="nav-left">
+            <a href="index.html">Home</a>
+            <a href="Features.html" class="act">Features</a>
+            <a href="Blog.html">Blog</a>
+            <a href="All.html">Discover</a>
+        </div>
+        <div id="nav-right">
+            <div id="right1"><a href="">Login</a></div>
+            <div id="right2"><a href="">Start Selling</a></div>
+        </div>
+    </nav>
+
+    <div class="container-fluid text-center bg-lightyellow text-black py-5 b-top">
+        <p style="font-size: 125%;" class="mt-4">Product features</p>
+        <h1 style="font-size: 500%;" class="mt-4 mx-1">Built for new</h1>
+        <h1 style="font-size: 500%;" class="mx-1">beginnings</h1>
+        <div class="container px-5">
+            <p style="font-size: 175%;" class="mt-4 mx-5 mb-5">Gumroad is a powerful, but simple, e-commerce platform that puts a wide selection of tools at your fingertips. Now you can sell the digital services you want—books, memberships, courses, and more—right to your audience.</p>
+        </div>
+        <div class="container">
+            <img src="svg01.svg" alt="" class="mx-3">
+            <img src="svg02.svg" alt="" class="mx-3">
+            <img src="svg03.svg" alt="" class="mx-3">
+            <img src="svg04.svg" alt="" class="mx-3">
+        </div>
+    </div>
+
+    <div class="container-fluid text-center b-black bg-pink text-black py-5">
+        <p style="font-size: 125%;" class="mt-5">Customizable Options</p>
+        <h1 style="font-size: 400%;" class="mt-4">Your store, your way</h1>
+        <div class="container px-5">
+            <p style="font-size: 175%;" class="mt-4 mx-5 mb-5">Gumroad plays well with others. Set up your store on our
+                platform, or easily embed it on your existing site.</p>
+        </div>
+    </div>
+
+    <div class="container-fluid text-center b-bottom b-black bg-white text-black py-5">
+        <p style="font-size: 125%;" class="mt-5">Payment Integrations</p>
+        <h1 style="font-size: 400%;" class="mt-4">Money, incoming</h1>
+        <div class="container px-5">
+            <p style="font-size: 175%;" class="mt-4 mx-5 mb-0">Once you get set up, it’s easy to ring the register.</p>
+            <p style="font-size: 175%;" class="mt-0 mx-5 mb-5">Here’s how you can sell and get paid, fast.</p>
+        </div>
+    </div>
+
+    <div class="row d-flex flex-column flex-lg-row">
+        <div class="col-lg-6 bg-black text-white px-4 py-5">
+            <div class="container py-3">
+                <h1 class="text-purple my-3">Create simple memberships</h1>
+                <p>Give customers access to a library of content for as long as they’re subscribed.</p>
+                <h1 class="text-purple my-3">Set up subscriptions</h1>
+                <p>Let customers pay over time—monthly, quarterly, biannually, yearly, and more.</p>
+                <h1 class="text-purple my-3">The sky’s the limit</h1>
+                <p>Give your audience the chance to pay what they want for your product.</p>
+            </div>
+        </div>
+        <div class="col-lg-6 bg-purple text-center b-top">
+            <div class="container my-4">
+                <img src="svg5.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="row d-flex flex-column-reverse flex-lg-row flex-wrap">
+        <div class="col-lg-6 bg-purple text-center p-5">
+            <div class="container my-4 me-2">
+                <img src="svg6.svg" alt="">
+            </div>
+        </div>
+        <div class="col-lg-6 text-white bg-black p-5">
+            <div class="container py-3">
+                <h1 class="text-purple my-3">Say ¥£$ to different currencies</h1>
+                <p>Increase your sales opportunities by accepting payments from a global audience.</p>
+                <h1 class="text-purple my-3">Don't sweat VAT</h1>
+                <p>We collect VAT as required and send it to the EU . You don’t need to do a thing.</p>
+                <h1 class="text-purple my-3">Want to give 10% off?</h1>
+                <p>Create discount offer codes for your products, as a percentage or fixed amount.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 bg-black text-white p-5">
+            <div class="container py-3">
+                <h1 class="text-purple my-3">Generate license keys</h1>
+                <p>Selling software? We can create your license keys, so you can get back to beta.</p>
+                <h1 class="text-purple my-3">Sell multiple versions</h1>
+                <p>Allow buyers to pick from PDF, ePub, and Mobi. Even charge more for lossless audio.</p>
+                <h1 class="text-purple my-3">Protect your work</h1>
+                <p>We can create lightweight DRM to help keep customers honest.</p>
+            </div>
+        </div>
+        <div class="col-lg-6 bg-purple text-center">
+            <div class="container my-4 me-2 ps-5">
+                <img src="svg7.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+<!--  -->
+    <div class="container-fluid text-center b-black b-bottom bg-white text-black py-5">
+        <p style="font-size: 125%;" class="mt-5">Comprehensive platform</p>
+        <h1 style="font-size: 400%;" class="mt-4">From start to finesse</h1>
+        <div class="container px-5">
+            <p style="font-size: 175%;" class="mt-4 mx-5 mb-5">We’ve spent ten years building an end-to-end platform so you can start selling in seconds.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 bg-black text-white p-5">
+            <div class="container py-3">
+                <h1 class="text-yellow my-3">Tools to get going fast</h1>
+                <p>Create a profit-making machine in no time with our flexible page editor or easily embed a ‘Follow’ button onto your existing site.</p>
+                <h1 class="text-yellow my-3">Sell anything</h1>
+                <p>We don’t limit your ideas. Whether it's a digital download, eBook, course, or monthly membership, we make sure it checks out.</p>
+                <h1 class="text-yellow my-3">Bring your friends</h1>
+                <p>Already have fans? Easily import your existing email list—and export your followers and customers at any time.</p>
+            </div>
+        </div>
+        <div class="col-sm-6 bg-yellow text-center b-top">
+            <div class="container my-4 me-2">
+                <img src="svg1.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="row d-flex flex-wrap-reverse">
+        <div class="col-sm-6 bg-yellow text-center p-5">
+            <div class="container my-4 me-2">
+                <img src="svg2.svg" alt="">
+            </div>
+        </div>
+        <div class="col-sm-6 text-white bg-black p-5">
+            <div class="container py-3">
+                <h1 class="text-yellow my-3">Be ready when they are</h1>
+                <p>All payments are secure and smooth, so your customers can read, listen, or watch their purchase immediately.</p>
+                <h1 class="text-yellow my-3">Make decisions with your data</h1>
+                <p>Dive deeper into your sales with analytics that can help you improve your products and messaging.</p>
+                <h1 class="text-yellow my-3">Grow your audience</h1>
+                <p>Post new updates, send email broadcasts, and use powerful automated workflows to connect and grow your audience.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="startSelling" class="container-fluid text-center b-black bg-pink py-5">
+        <h1 class="hl">Share your work.</h1>
+        <h1 class="mb-5">Someone out there needs it.</h1>
+        <button class="bt mt-4 mb-5">Start Selling</button>
+    </div>
+
+    <div id="footer-main" class="d-flex flex-wrap flex-column flex-sm-row">
+        <div id="left">
+            <h3>Subscribe to get tips and tactics to grow the way you want.</h3>
+            <div class="container">
+                <form action="">
+                    <input type="email" placeholder="Your email address">
+                    <button>➜</button>
+                </form>
+            </div>
+        </div>
+        <div id="right">
+            <div id="item-list">
+                <ul>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+                <ul>
+                    <li><a href="Features.html">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="All.html">Discover</a></li>
+                    <li><a href="#">Jobs</a></li>
+                </ul>
+            </div>
+
+            <div id="icon-div">
+                <i class="ri-twitter-fill"></i>
+                <i class="ri-youtube-fill"></i>
+                <i class="ri-instagram-line"></i>
+                <i class="ri-facebook-fill"></i>
+                <i class="ri-pinterest-fill"></i>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

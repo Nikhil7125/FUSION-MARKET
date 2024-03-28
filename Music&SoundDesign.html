@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title>Music & Sound Design</title>
+
+    <style>
+      .bg-green {
+        background-color: #23a094;
+      }
+
+      .bg-red {
+        background-color: #dc341e;
+      }
+
+      .bg-yellow {
+        background-color: #ffc900;
+      }
+
+      .bg-lightyellow {
+        background-color: #f1f333;
+      }
+
+      .bg-purple {
+        background-color: #90a8ed;
+      }
+
+      .bg-pink {
+        background-color: #ff90e8;
+      }
+
+      .bg-discover {
+        background-color: #f4f4f0;
+    }
+    
+    .bg-white{
+          background-color: white;
+      }
+
+      .text-black {
+        color: black !important;
+      }
+
+      .border-ul {
+        border: 1.5px solid black;
+      }
+
+      .b-black{
+        border-top: 2px solid black;
+      }
+
+      .b-top {
+        border-top: 1px solid black;
+      }
+
+      .b-bottom {
+        border-bottom: 1px solid black;
+      }
+
+      .dropdown-menu {
+        --bs-dropdown-link-hover-bg: black !important;
+        --bs-dropdown-padding-y: 0px;
+        --bs-dropdown-link-hover-color: white !important;
+      }
+
+      .dropdown-item {
+        text-decoration: underline;
+        padding: 10px 25px 10px 10px;
+      }
+
+      .nav-item {
+        padding-left: 5px;
+      }
+
+      .nav-link{
+        padding-left: 10px;
+      }
+
+      .navbar-brand{
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: clamp(150%, 4vw, 200%);
+        padding-bottom: 0px;
+      }
+
+      #collapseNavbar{
+        padding-left: 0px;
+        padding-top: 5px;
+      }
+
+      .navbar-toggler{
+        border: 1px solid black;
+        background-color: white;
+      }
+
+      .dropdown-item.active, .dropdown-item:active{
+        color: black;
+        background-color: white;
+      }
+
+    .content{
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .row{
+        margin-right: 0px !important;
+    }
+
+    div.scrolltags {
+        overflow: auto;
+        white-space: nowrap;
+    }
+    
+    div.scrolltags a {
+        border: 1px solid black;
+        display: inline-block;
+        background-color: white;
+        color: black;
+        border-radius: 10rem;
+        text-align: center;
+        padding: 6px 10px 6px 10px;
+        text-decoration: none;
+        margin: 0px 6px 4px 6px;
+        font-size: small;
+        font-weight: 450;
+    }
+    
+    div.scrolltags a:hover {
+        box-shadow: 4px 4px black;
+        cursor: pointer;
+        transform: translateX(-3px);        
+    }
+
+    .parallelogram{
+        transform: skew(20deg);
+        width: max-content;
+        border: 1px solid black;
+        color: black;
+    }
+
+    .card{
+        border: 1px solid black;
+        --bs-card-spacer-x: 0px;
+    }
+
+    .card-title{
+        font-size: clamp(100%, 1.5vw, 125%);
+    }
+    
+    .card-text > span{
+        font-size: clamp(90%, 1vw, 125%);
+        text-decoration: underline;
+    }
+
+    .card-text{
+        margin-bottom: 0.5rem;;
+    }
+
+    .card>img{
+        height: 250px;
+    }
+
+    .card:hover{
+        background-color: white;
+        border: 1px solid black;
+        box-shadow: 4px 4px black;
+        cursor: pointer;
+        transform: translateX(-3px);
+    }
+
+    .cardDiv{
+        margin-left: 1rem;
+        margin-right: 1rem;
+        display: block;
+        width: 80%;
+        height: 75px;
+    }
+
+    .rating{
+        display: inline-block; font-size: 12px; color: #000000; background: #cccccc; border-radius: 50px; padding: 1px 6px;
+    }
+
+    .cardLg{
+        padding-bottom: 0px;
+    }
+
+    .cardLg .rating{
+        margin-top: 0.9rem;
+        margin-left: 0.9rem;
+    }
+
+    #bestSelling{
+        padding-left: 0px;
+    }
+
+    #bestSelling > h3{
+        font-size: clamp(90%, 2vw, 150%);
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    
+    #bestSelling > button{
+        font-size: clamp(70%, 1vw, 150%);
+        border: 1px solid black;
+        background-color: white;
+        color: black !important;
+    }
+
+    #bestSelling > button:hover{
+        box-shadow: 2.5px 2.5px black;
+        transform: translateX(-3px);
+    }
+
+    #footer p{
+        margin-bottom: 0px;
+        font-size: clamp(100%, 2vw, 130%);
+    }
+    
+    #footer button{
+        font-size: clamp(80%, 2vw, 100%);
+    }
+
+    #footer button:hover{
+        border: 1px solid black;
+        background-color: #ff90e8;
+        box-shadow: 2px 2px white;
+        transform: translateX(-2px);
+    }
+
+    #footer button a{
+        color: black;
+        text-decoration: none;
+    }
+
+    #search button{
+        border: 1px solid black;
+        background-color: white;
+    }
+
+    #search button:hover{
+        box-shadow: 2px 2px black;
+        transform: translateX(-3px);
+    }
+
+    #search input{
+        position: relative;
+        width: 60vw;
+        border: 1px solid black;
+        background-color: white;
+    }
+
+    @media (min-width: 1199px) {
+        #aloneLink:hover{
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 10rem;
+            box-shadow: 4px 4px black;
+            transform: translateX(-3px);
+        }
+
+        .dropdown:hover .nav-link{
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 10rem;
+            box-shadow: 4px 4px black;
+            transform: translateX(-3px);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .act{
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 10rem;
+        }
+    }
+
+    @media screen and (max-width: 767px){
+        .cardDiv{
+            height: 56px !important;
+        }
+    }
+    </style>
+  </head>
+  <body class="bg-discover">
+    <nav class="navbar d-flex flex-column navbar-expand-xl b-bottom py-3 ps-3 bg-red">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">FUSION MARKET</a>
+        <button
+          class="navbar-toggler me-2"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="container-fluid mt-2 mb-3 me-2">
+        <form id="search" class="d-flex">
+            <input class="form-control me-2" type="text" placeholder="Search Products">
+            <button class="btn" type="button">⌕</button>
+        </form>
+      </div>
+      <div class="container-fluid" id="collapseNavbar">
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-black" href="All.html" id="aloneLink">All</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link text-black"
+                href="Audio.html"
+                role="button"
+                data-bs-toggle="dropdown"
+                >Audio</a
+              >
+                <ul class="dropdown-menu bg-red border-ul">
+                    <li><a class="dropdown-item" href="Audio.html">All Audio</a></li>
+                    <li><a class="dropdown-item" href="Audio.html">ASMR</a></li>
+                    <li><a class="dropdown-item" href="Audio.html">Healing</a></li>
+                    <li><a class="dropdown-item" href="Audio.html">Hypnosis</a></li>
+                    <li><a class="dropdown-item" href="Audio.html">Sleep & Meditation</a></li>
+                    <li><a class="dropdown-item" href="Audio.html">Voiceover</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link text-black"
+                href="Business&Money.html"
+                role="button"
+                data-bs-toggle="dropdown"
+                >Business & Money</a
+              >
+              <ul class="dropdown-menu bg-green border-ul">
+                <li><a class="dropdown-item" href="Business&Money.html">All Business & Money</a></li>
+                <li><a class="dropdown-item" href="Business&Money.html">Accounting</a></li>
+                <li><a class="dropdown-item" href="Business&Money.html">Entrepreneurship</a></li>
+                <li><a class="dropdown-item" href="Business&Money.html">Investing</a></li>
+                <li><a class="dropdown-item" href="Business&Money.html">Marketing & Sales</a></li>
+                <li><a class="dropdown-item" href="Business&Money.html">Personal Finance</a></li>
+                <li><a class="dropdown-item" href="Business&Money.html">Real Estate</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-black" href="Comics&GraphicNovels.html" id="aloneLink"
+                >Comics & Graphic Novels</a
+              >
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link text-black"
+                href="Design.html"
+                role="button"
+                data-bs-toggle="dropdown"
+                >Design</a
+              >
+              <ul class="dropdown-menu bg-yellow border-ul">
+                <li><a class="dropdown-item" href="Design.html">All Design</a></li>
+                <li><a class="dropdown-item" href="Design.html">Architecture</a></li>
+                <li><a class="dropdown-item" href="Design.html">Fonts</a></li>
+                <li><a class="dropdown-item" href="Design.html">Print & Packaging</a></li>
+                <li><a class="dropdown-item" href="Design.html">Icons</a></li>
+                <li><a class="dropdown-item" href="Design.html">Graphics</a></li>
+                <li><a class="dropdown-item" href="Design.html">UI & Web</a></li>
+                <li><a class="dropdown-item" href="Design.html">Wallpapers</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link text-black"
+                href="Education.html"
+                role="button"
+                data-bs-toggle="dropdown"
+                >Education</a
+              >
+              <ul class="dropdown-menu bg-purple border-ul">
+                <li><a class="dropdown-item" href="Education.html">All Education</a></li>
+                <li><a class="dropdown-item" href="Education.html">English</a></li>
+                <li><a class="dropdown-item" href="Education.html">History</a></li>
+                <li><a class="dropdown-item" href="Education.html">Math</a></li>
+                <li><a class="dropdown-item" href="Education.html">Science</a></li>
+                <li><a class="dropdown-item" href="Education.html">Social Studies</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link text-black"
+                href="Fitness&Health.html"
+                role="button"
+                data-bs-toggle="dropdown"
+                >Fitness & Health</a
+              >
+              <ul class="dropdown-menu bg-lightyellow border-ul">
+                <li>
+                  <a class="dropdown-item" href="Fitness&Health.html">All Fitness & Health</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Fitness&Health.html">Exercise & Workout</a>
+                </li>
+                <li><a class="dropdown-item" href="Fitness&Health.html">Running</a></li>
+                <li><a class="dropdown-item" href="Fitness&Health.html">Sports</a></li>
+                <li>
+                  <a class="dropdown-item" href="Fitness&Health.html">Weight Loss & Dieting</a>
+                </li>
+                <li><a class="dropdown-item" href="Fitness&Health.html">Yoga</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a
+                  class="nav-link text-black act"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  >Music & Sound Design</a
+                >
+                <ul class="dropdown-menu bg-red border-ul">
+                  <li>
+                    <a class="dropdown-item" href="Music&SoundDesign.html">All Music & Sound Design</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="Music&SoundDesign.html">Albums</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="Music&SoundDesign.html">Instruments</a>
+                  </li>
+                  <li><a class="dropdown-item" href="Music&SoundDesign.html">Sound Design</a></li>
+                  <li>
+                    <a class="dropdown-item" href="Music&SoundDesign.html">Singles</a>
+                  </li>
+                  <li><a class="dropdown-item" href="Music&SoundDesign.html">Vocal</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a
+                  class="nav-link text-black"
+                  href="SelfImprovement.html"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  >Self Improvement</a
+                >
+                <ul class="dropdown-menu bg-green border-ul">
+                  <li>
+                    <a class="dropdown-item" href="SelfImprovement.html">All Self Improvement</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="SelfImprovement.html">Dating & Relationships</a>
+                  </li>
+                  <li><a class="dropdown-item" href="SelfImprovement.html">Philosophy</a></li>
+                  <li><a class="dropdown-item" href="SelfImprovement.html">Productivity</a></li>
+                  <li>
+                    <a class="dropdown-item" href="SelfImprovement.html">Psychology</a>
+                  </li>
+                  <li><a class="dropdown-item" href="SelfImprovement.html">Spirituality</a></li>
+                  <li><a class="dropdown-item" href="SelfImprovement.html">Wellness</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-black" href="Other.html" style="text-decoration: underline;" id="aloneLink">Other</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container-fluid content text-left text-black">
+          <h4 class="mt-4">Music & Sound Design</h4>
+      </div>
+    </nav>
+
+    <div class="container content mt-5">
+        <div class="scrolltags text-black">
+            <span>Popular Tags :&nbsp;</span>
+            <a href="#">piano sheet music (2850)</a>
+            <a href="#">sheetmusic (2291)</a>
+            <a href="#">ableton (1837)</a>
+            <a href="#">anime (1780)</a>
+            <a href="#">sample pack (1713)</a>
+            <a href="#">music (1711)</a>
+            <a href="#">piano (1579)</a>
+            <a href="#">royalty free music (1544)</a>
+        </div>
+    </div>
+
+    <div class="container-fluid content mt-5">
+        <h3>Staff picks</h3>
+        <div class="row d-flex flex-column flex-md-row flex-wrap">
+            <div class="col-md-3">
+                <div class="card mt-4">
+                    <img class="card-img-top" src="Music&SoundDesign-Img/M&SD11.webp" alt="Card image">
+                    <div class="card-body b-top">
+                    <div class="cardDiv">
+                        <h4 class="card-title">Lyric 8 - Lyric Writing Templates</h4>
+                    </div>
+                      <p class="card-text mt-1 ms-3">By <span>SongWriters's Shop</span></p>
+                      <span class="rating ms-3 mb-3">★ &nbsp;5.0 ( 2 )</span>
+                      <div class="b-top">
+                          <div class="parallelogram bg-pink ms-4 mt-3 p-1">€08.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card mt-4">
+                    <img class="card-img-top" src="Music&SoundDesign-Img/M&SD12.webp" alt="Card image">
+                    <div class="card-body b-top">
+                    <div class="cardDiv">
+                        <h4 class="card-title">Music for Babes Series - Bach for Babies</h4>
+                    </div>
+                      <p class="card-text mt-1 ms-3">By <span>Greg Sudmeier</span></p>
+                      <span class="rating ms-3 mb-3">★ &nbsp;No Ratings</span>
+                      
+                      <div class="b-top">
+                          <div class="parallelogram bg-pink ms-4 mt-3 p-1">$15.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card mt-4">
+                    <img class="card-img-top" src="Music&SoundDesign-Img/M&SD13.webp" alt="Card image">
+                    <div class="card-body b-top">
+                    <div class="cardDiv">
+                        <h4 class="card-title">DRUMMING ABC</h4>
+                    </div>
+                      <p class="card-text mt-1 ms-3">By <span>Aslak</span></p>
+                      <span class="rating ms-3 mb-3">★ &nbsp;5.0 ( 4 )</span>
+                      <div class="b-top">
+                          <div class="parallelogram bg-pink ms-4 mt-3 p-1">$12.99</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="card mt-4">
+                    <img class="card-img-top" src="Music&SoundDesign-Img/M&SD14.webp" alt="Card image">
+                    <div class="card-body b-top">
+                        <div class="cardDiv">
+                            <h4 class="card-title">chos pack, by oshi</h4>
+                        </div>
+                        <p class="card-text mt-1 ms-3">By <span>oshi</span></p>
+                        <span class="rating ms-3 mb-3">★ &nbsp;5.0 ( 8 )</span>
+                        <div class="b-top">
+                            <div class="parallelogram bg-pink ms-4 mt-3 p-1">$15.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <br>
+
+    <div class="container-fluid content">
+        <div id="bestSelling" class="container-fluid d-flex justify-content-between">
+            <h3>Best Selling Products</h3>
+            <button class="btn">View All</button>
+        </div>
+
+        <div class="row d-flex flex-column flex-md-row flex-wrap">
+            <div class="col-md-4">
+                <div class="card mt-4">
+                    <img class="card-img-top" src="Music&SoundDesign-Img/M&SD21.webp" alt="Card image">
+                    <div class="card-body b-top cardLg">
+                        <div class="cardDiv">
+                            <h4 class="card-title">
+                                鋼琴技巧急診室：Wiwi</h4>
+                        </div>
+                        <p class="card-text mt-1 ms-3 mb-3">By <span>Wiwi Kuan(官大為)</span></p>
+                        <div class="b-top d-flex">
+                            <div style="width: 65%; border-right: 1px solid black;">
+                                <span class="rating">★ &nbsp;5.0 (53)</span>
+                            </div>
+                            <div style="width: 35%;">
+                                <div class="parallelogram bg-pink d-block mx-auto my-2 p-1">$59.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mt-4">
+                    <img class="card-img-top" src="Music&SoundDesign-Img/M&SD22.webp" alt="Card image">
+                    <div class="card-body b-top cardLg">
+                        <div class="cardDiv">
+                            <h4 class="card-title">nvk_VARIATIONS - Instant Variations in Reaper</h4>
+                        </div>
+                        <p class="card-text mt-1 ms-3 mb-3">By <span>nvk.tools</span></p>
+
+                        <div class="b-top d-flex">
+                            <div style="width: 65%; border-right: 1px solid black;">
+                                <span class="rating">★ &nbsp;5.0 ( 3 )</span>
+                            </div>
+                            <div style="width: 35%;">
+                                <div class="parallelogram bg-pink d-block mx-auto my-2 p-1">$99.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mt-4">
+                    <img class="card-img-top" src="Music&SoundDesign-Img/M&SD23.webp" alt="Card image">
+                    <div class="card-body b-top cardLg">
+                        <div class="cardDiv">
+                            <h4 class="card-title">ChordieApp for Mac OS X</h4>
+                        </div>
+                        <p class="card-text mt-1 ms-3 mb-3">By <span>MatCat Music</span></p>
+                        
+                        <div class="b-top d-flex">
+                            <div style="width: 65%; border-right: 1px solid black;">
+                                <span class="rating">★ &nbsp;4.8 (404)</span>
+                            </div>
+                            <div style="width: 35%;">
+                                <div class="parallelogram bg-pink d-block mx-auto my-2 p-1">$25.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <br>
+
+    <div class="container-fluid content">
+        <div id="bestSelling" class="container-fluid d-flex justify-content-between">
+            <h3>Hot and new products</h3>
+            <button class="btn btn-primary">View All</button>
+        </div>
+
+        <div class="row d-flex flex-column flex-md-row flex-wrap">
+            <div class="col-md-4">
+                <div class="card mt-4">
+                    <img class="card-img-top" src="Music&SoundDesign-Img/M&SD31.webp" alt="Card image">
+                    <div class="card-body b-top cardLg">
+                        <div class="cardDiv">
+                            <h4 class="card-title">Spectralsand (vst)</h4>
+                        </div>
+                        <p class="card-text mt-1 ms-3 mb-3">By <span>(un)familiar</span></p>
+                        <div class="b-top d-flex">
+                            <div style="width: 65%; border-right: 1px solid black;">
+                                <span class="rating">★ &nbsp;4.9 (49)</span>
+                            </div>
+                            <div style="width: 35%;">
+                                <div class="parallelogram bg-pink d-block mx-auto my-2 p-1">$10.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mt-4">
+                    <img class="card-img-top" src="Music&SoundDesign-Img/M&SD32.webp" alt="Card image">
+                    <div class="card-body b-top cardLg">
+                        <div class="cardDiv">
+                            <h4 class="card-title">AS Damage 1.0</h4>
+                        </div>
+                        <p class="card-text mt-1 ms-3 mb-3">By <span>SABROI</span></p>
+
+                        <div class="b-top d-flex">
+                            <div style="width: 65%; border-right: 1px solid black;">
+                                <span class="rating">★ &nbsp;5.0 ( 5 )</span>
+                            </div>
+                            <div style="width: 35%;">
+                                <div class="parallelogram bg-pink d-block mx-auto my-2 p-1">$20.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mt-4">
+                    <img class="card-img-top" src="Music&SoundDesign-Img/M&SD33.webp" alt="Card image">
+                    <div class="card-body b-top cardLg">
+                        <div class="cardDiv">
+                            <h4 class="card-title">Modular Cookbook Vol.I</h4>
+                        </div>
+                        <p class="card-text mt-1 ms-3 mb-3">By <span>Omri Cohen</span></p>
+                        
+                        <div class="b-top d-flex">
+                            <div style="width: 65%; border-right: 1px solid black;">
+                                <span class="rating">★ &nbsp;5.0 ( 9 )</span>
+                            </div>
+                            <div style="width: 35%;">
+                                <div class="parallelogram bg-pink d-block mx-auto my-2 p-1">€15.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <br>
+
+    <div id="footer" class="container-fluid bg-black text-white content p-4">
+        <div class="container d-flex text-center flex-md-row flex-column justify-content-center">
+            <p class="my-auto pt-1 pe-2">Want to start selling?</p>
+            <div>
+                <button class="btn bg-pink text-black mt-2" style="width: max-content;"><a href="index.html">Find out how</a> 
+                    <span style="font-size: 110%;">→</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let w = window.innerWidth;
+
+        let a = document.getElementsByClassName("nav-link");
+
+        if(w > 1199){
+            for(let i=1; i<a.length; i++){
+                if(i!=3 && i!=9){   
+                    a[i].setAttribute('data-bs-toggle', '');
+                    a[i].setAttribute('role', '');
+                }
+            }
+        } else {
+            for(let j=1; j<a.length; j++){
+                if(j!=3 && j!=9){       
+                    a[j].setAttribute('data-bs-toggle', 'dropdown');
+                    a[j].setAttribute('role', 'button');
+                }
+            }
+        }
+    </script>
+  </body>
+</html>
